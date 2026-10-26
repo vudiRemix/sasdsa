@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Страница не найдена — Обиход</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F3EFE8">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+</head>
+<body data-page="404">
+  <div data-site-header></div>
+
+  <main id="main">
+    <div class="container notfound">
+      <p class="notfound__n" aria-hidden="true">404</p>
+      <h1 class="h2">Такой страницы нет. Зато есть 35 вещей, которые точно существуют</h1>
+      <p class="lead">Возможно, ссылка устарела или в адресе опечатка. Начните с каталога или с того, что чаще всего покупают.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="catalog.html">В каталог<svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--outline" href="index.html">На главную</a>
+      </div>
+    </div>
+    <section class="section" aria-labelledby="pop-title" style="padding-top:0">
+      <div class="container">
+        <div class="section-head"><h2 class="h3" id="pop-title">Чаще всего покупают</h2></div>
+        <div class="products products--4" data-popular></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/info.js"></script>
+</body>
+</html>

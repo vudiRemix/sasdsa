@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Товар — Обиход</title>
+  <meta name="description" content="Вещи для дома от небольших мастерских.">
+  <meta name="theme-color" content="#F3EFE8">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+</head>
+<body data-page="product">
+  <div data-site-header></div>
+
+  <main id="main">
+    <div class="container">
+      <nav aria-label="Навигация по разделам"><ol class="crumbs" data-crumbs></ol></nav>
+    </div>
+
+    <!-- Основной блок рисуется из data.js по ?id= -->
+    <div class="container" data-pdp></div>
+
+    <section class="section" aria-labelledby="related-title" data-related-section>
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h3" id="related-title">С этим покупают</h2>
+          <div class="section-head__aside">
+            <div class="rail__nav">
+              <button class="rail__btn" type="button" data-rail-prev aria-label="Прокрутить назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+              <button class="rail__btn" type="button" data-rail-next aria-label="Прокрутить вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="rail" data-rail-related><div class="rail__track" data-related></div><div class="rail__progress" aria-hidden="true"><span></span></div></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="reviews" aria-labelledby="rv-title" data-reviews-section>
+      <div class="container rv" data-rv></div>
+    </section>
+
+    <section class="section" aria-labelledby="recent-title" data-recent-section hidden>
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h3" id="recent-title">Вы смотрели</h2>
+          <div class="section-head__aside">
+            <div class="rail__nav">
+              <button class="rail__btn" type="button" data-rail-prev aria-label="Прокрутить назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+              <button class="rail__btn" type="button" data-rail-next aria-label="Прокрутить вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="rail" data-rail-recent><div class="rail__track" data-recent></div></div>
+      </div>
+    </section>
+
+    <!-- Лайтбокс -->
+    <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="Фотографии товара" tabindex="-1">
+      <div class="lightbox__bar"><span data-lb-count></span>
+        <button class="icon-btn" type="button" data-lb-close aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="lightbox__stage">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" data-lb-img>
+        <button class="rail__btn lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Предыдущее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+        <button class="rail__btn lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Следующее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <div class="buybar" data-buybar aria-hidden="true"></div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
+</html>

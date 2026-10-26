@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Каталог — Обиход</title>
+  <meta name="description" content="Керамика, свет, текстиль, мебель и свечи от небольших мастерских. Фильтры по цене, мастерской и наличию.">
+  <meta name="theme-color" content="#F3EFE8">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+</head>
+<body data-page="catalog">
+  <div data-site-header></div>
+
+  <main id="main">
+    <div class="container">
+      <nav aria-label="Навигация по разделам"><ol class="crumbs" data-crumbs></ol></nav>
+
+      <header class="page-head">
+        <div class="page-head__row">
+          <h1 class="h1" data-title>Каталог</h1>
+          <p class="page-head__count" data-count aria-live="polite"></p>
+        </div>
+        <p class="page-head__desc" data-desc hidden></p>
+        <nav class="chips chips--scroll" aria-label="Категории" data-cat-chips></nav>
+      </header>
+    </div>
+
+    <div class="container catalog">
+      <aside class="filters" aria-label="Фильтры" data-filters></aside>
+
+      <div class="catalog__main">
+        <div class="toolbar">
+          <div class="toolbar__left">
+            <button class="btn btn--outline btn--sm toolbar__filters-btn" type="button" data-open="filters" aria-controls="drawer-filters">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+              Фильтры<span data-filters-n></span>
+            </button>
+            <div class="active-filters" data-active></div>
+          </div>
+          <div class="toolbar__right">
+            <label class="visually-hidden" for="sort">Сортировка</label>
+            <select class="select select--bare" id="sort" data-sort>
+              <option value="pop">Сначала популярные</option>
+              <option value="new">Сначала новые</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+              <option value="rating">По рейтингу</option>
+            </select>
+            <div class="view-toggle" role="group" aria-label="Вид сетки">
+              <button type="button" data-cols="2" aria-pressed="false" aria-label="Две колонки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h7v16H4zM13 4h7v16h-7z"/></svg></button>
+              <button type="button" data-cols="3" aria-pressed="true" aria-label="Три колонки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 4h4.5v16H3.5zM9.75 4h4.5v16h-4.5zM16 4h4.5v16H16z"/></svg></button>
+              <button type="button" data-cols="4" aria-pressed="false" aria-label="Четыре колонки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 4h3.4v16H3zM8.2 4h3.4v16H8.2zM13.4 4h3.4v16h-3.4zM18.6 4H22v16h-3.4z"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="products" data-grid data-grid-cols="3"></div>
+        <div class="empty" data-empty hidden></div>
+        <div class="load-more" data-more hidden>
+          <p data-more-text></p>
+          <div class="load-more__bar" aria-hidden="true"><span data-more-bar></span></div>
+          <button class="btn btn--outline" type="button" data-more-btn>Показать ещё</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фильтры на телефоне -->
+    <aside class="drawer drawer--left filters-drawer" id="drawer-filters" data-drawer="filters" role="dialog" aria-modal="true" aria-labelledby="filters-title" tabindex="-1">
+      <div class="drawer__head">
+        <h2 class="drawer__title" id="filters-title">Фильтры</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Закрыть фильтры"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="drawer__body" data-filters-m></div>
+      <div class="drawer__foot">
+        <button class="btn btn--block" type="button" data-close data-show-btn>Показать</button>
+      </div>
+    </aside>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Доставка, оплата и возврат — Обиход</title>
+  <meta name="description" content="Курьер завтра по Москве и Петербургу, СДЭК и Почта по России. Бесплатная доставка от 7 000 ₽, возврат 14 дней.">
+  <meta name="theme-color" content="#F3EFE8">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+</head>
+<body data-page="delivery">
+  <div data-site-header></div>
+
+  <main id="main">
+    <div class="container">
+      <nav aria-label="Навигация по разделам"><ol class="crumbs"><li><a href="index.html">Главная</a></li><li aria-current="page">Доставка и оплата</li></ol></nav>
+      <header class="page-hero">
+        <p class="eyebrow">Покупателям</p>
+        <h1 class="h1">Доставка, оплата и&nbsp;возврат</h1>
+        <p class="lead" data-free-lead>Отправляем в день заказа, если оформить до 15:00.</p>
+      </header>
+    </div>
+
+    <div class="container info-grid" style="padding-bottom:var(--section)">
+      <aside class="info-grid__aside">
+        <p class="eyebrow eyebrow--plain">Содержание</p>
+        <nav class="toc" aria-label="Содержание страницы">
+          <a href="#delivery">Доставка</a>
+          <a href="#payment">Оплата</a>
+          <a href="#return">Возврат и обмен</a>
+          <a href="#pickup">Самовывоз и шоурум</a>
+          <a href="#faq">Вопросы и ответы</a>
+        </nav>
+      </aside>
+
+      <div style="display:grid;gap:var(--sp-9)">
+        <section id="delivery" aria-labelledby="d-title" style="display:grid;gap:24px">
+          <h2 class="h3" id="d-title">Доставка</h2>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th scope="col">Способ</th><th scope="col">Срок</th><th scope="col">Стоимость</th></tr></thead>
+              <tbody data-ship-rows></tbody>
+            </table>
+          </div>
+          <div class="prose">
+            <p>Мебель везём отдельно: собственная служба по Москве и Петербургу, транспортная компания — по России. Подъём на этаж и сборка — бесплатно. Срок изготовления указан в карточке товара.</p>
+            <p>Хрупкое упаковываем в бумажную стружку и двойной картон. Если что-то разобьётся в дороге, пришлите фото — заменим или вернём деньги, разбираться с перевозчиком будем сами.</p>
+          </div>
+        </section>
+
+        <section id="payment" aria-labelledby="p-title" style="display:grid;gap:24px">
+          <h2 class="h3" id="p-title">Оплата</h2>
+          <ul class="pay-methods" data-pay-list></ul>
+          <p class="prose">Электронный чек приходит на почту сразу после оплаты. Юрлицам выставляем счёт — напишите на <a data-mail href="mailto:"></a>.</p>
+        </section>
+
+        <section id="return" aria-labelledby="r-title" style="display:grid;gap:24px">
+          <h2 class="h3" id="r-title">Возврат и обмен</h2>
+          <div class="prose">
+            <p>У вас есть 14 дней, чтобы вернуть вещь, если она не подошла. Объяснять причину не нужно — достаточно сохранить упаковку и товарный вид.</p>
+            <p>Курьер сам заберёт посылку в Москве и Петербурге, в другие города — бесплатно через СДЭК по коду возврата. Деньги вернутся на карту за 1–3 рабочих дня после того, как посылка доедет до нас.</p>
+            <p>Мебель, сделанную по вашим размерам или в выбранной обивке, вернуть нельзя — это предусмотрено законом о защите прав потребителей. Мы всегда предупреждаем об этом до оплаты.</p>
+          </div>
+        </section>
+
+        <section id="pickup" aria-labelledby="pk-title" style="display:grid;gap:24px">
+          <h2 class="h3" id="pk-title">Самовывоз и шоурум</h2>
+          <div class="split" style="gap:32px">
+            <div class="split__media" style="aspect-ratio:4/3"><img src="assets/img/editorial/room5-md.webp" alt="Светлая комната с плетёными зеркалами и креслом" width="1000" height="732" loading="lazy"></div>
+            <div class="prose" style="display:grid;gap:12px;align-content:start">
+              <p class="h4" style="color:var(--c-ink)" data-address></p>
+              <p data-hours></p>
+              <p>Заказ можно забрать в день оформления после 15:00. В шоуруме выставлено всё, что есть в каталоге: можно потрогать лён, послушать, как звенит фарфор, и выбрать вазу из партии.</p>
+              <p><a class="link-arrow" data-phone href="tel:"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" aria-labelledby="f-title" style="display:grid;gap:24px">
+          <h2 class="h3" id="f-title">Вопросы и ответы</h2>
+          <div>
+            <details class="acc"><summary>Почему вещи из одного набора отличаются друг от друга?<span class="acc__icon"></span></summary><div class="acc__body"><p>Потому что их делают руками. Каждую пиалу вытягивают на круге отдельно, глазурь ложится по-разному, крап в массе распределяется случайно. Отличия небольшие, но заметные, если поставить вещи рядом. Мы считаем это достоинством, а не браком.</p></div></details>
+            <details class="acc"><summary>Можно ли заказать вещь в другом цвете или размере?<span class="acc__icon"></span></summary><div class="acc__body"><p>Да, большинство мастерских делают вещи под заказ. Напишите нам, какую вещь и в каком цвете хотите, — уточним у мастерской срок и цену. Обычно это 3–6 недель.</p></div></details>
+            <details class="acc"><summary>Посуду правда можно мыть в посудомоечной машине?<span class="acc__icon"></span></summary><div class="acc__body"><p>Если в карточке товара написано «можно» — да, мы это проверяли. Исключения — деревянные доски и подставки, вазы без внутренней глазури и всё, что покрыто воском.</p></div></details>
+            <details class="acc"><summary>Что делать, если вещь пришла разбитой?<span class="acc__icon"></span></summary><div class="acc__body"><p>Сфотографируйте посылку и вещь и пришлите нам в течение суток после получения. Мы отправим замену или вернём деньги — на выбор. Возвращать осколки не нужно.</p></div></details>
+            <details class="acc"><summary>Есть ли подарочные сертификаты?<span class="acc__icon"></span></summary><div class="acc__body"><p>Есть, номиналом от 3 000 до 30 000 ₽. Электронный приходит на почту сразу, бумажный в конверте можно забрать в шоуруме или добавить к заказу.</p></div></details>
+            <details class="acc"><summary>Работаете ли вы с дизайнерами интерьера?<span class="acc__icon"></span></summary><div class="acc__body"><p>Да. Для дизайнеров и декораторов — скидка 10%, отдельный менеджер и возможность взять вещи на съёмку. Напишите нам с примерами проектов.</p></div></details>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/info.js"></script>
+</body>
+</html>
