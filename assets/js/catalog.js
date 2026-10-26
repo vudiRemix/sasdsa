@@ -27,6 +27,7 @@
     shown: PER_PAGE
   };
   var cols = S.storage.get('cols', 3);
+  var lastGridCols = 0;
 
   function writeUrl() {
     var p = new URLSearchParams();
@@ -174,8 +175,11 @@
     }
     empty.hidden = true;
     var showPromo = !st.cat && !st.q && !st.fav && !filtersCount() && list.length > 6;
-    // Плитка-врезка занимает две ячейки — добавляем ещё один товар, чтобы ряды были полными
-    var page = list.slice(0, st.shown + (showPromo ? 1 : 0));
+    // Плитка-врезка занимает две ячейки — добираем товаров, чтобы последний ряд был полным
+    var gridCols = getComputedStyle(grid).gridTemplateColumns.split(' ').length || 1;
+    lastGridCols = gridCols;
+    var extra = showPromo ? (gridCols - (st.shown + 2) % gridCols) % gridCols : 0;
+    var page = list.slice(0, st.shown + extra);
     var html = page.map(function (p, i) { return S.card(p, { i: i % 4, reveal: true, eager: i < 4 }); });
     if (showPromo) html.splice(4, 0, promoTile());
     grid.innerHTML = html.join('');
@@ -235,7 +239,7 @@
       st.cat = t.getAttribute('data-cat'); st.fav = false; update();
       window.scrollTo({ top: 0, behavior: S.reduceMotion ? 'auto' : 'smooth' });
     } else if (t.hasAttribute('data-cols')) {
-      setCols(+t.getAttribute('data-cols'));
+      setCols(+t.getAttribute('data-cols')); syncCols();
     } else if (t.hasAttribute('data-more-btn')) {
       st.shown += PER_PAGE; renderGrid();
       var cards = $$('[data-grid] .card'); var first = cards[st.shown - PER_PAGE];
@@ -250,6 +254,12 @@
     $('[data-grid]').setAttribute('data-grid-cols', n);
     $$('[data-cols]').forEach(function (b) { if (b.tagName === 'BUTTON') b.setAttribute('aria-pressed', +b.getAttribute('data-cols') === n); });
   }
+  // Число колонок поменялось (поворот экрана, переключатель вида) — пересобрать, чтобы ряды были полными
+  function syncCols() {
+    var n = getComputedStyle($('[data-grid]')).gridTemplateColumns.split(' ').length;
+    if (lastGridCols && n !== lastGridCols) renderGrid();
+  }
+  window.addEventListener('resize', S.debounce(syncCols, 200));
 
   $('[data-sort]').value = st.sort;
   setCols(cols);

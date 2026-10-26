@@ -503,8 +503,10 @@
   }
 
   /* ---------- Поиск ---------- */
+  // Простая «морфология»: отрезаем окончание, чтобы «ваза» находила «вазы», а «свеча» — «свечи»
+  function stem(w) { return w.length > 3 ? w.replace(/(ами|ями|ов|ев|ей|ах|ях|ой|ый|ий|ая|яя|ое|ее|ые|ие|ом|ем|[аяыиоеуюьй])$/, '') : w; }
   function searchProducts(q) {
-    var words = norm(q).split(/\s+/).filter(Boolean);
+    var words = norm(q).split(/[\s,.]+/).filter(Boolean).map(stem);
     if (!words.length) return [];
     return D.products.filter(function (p) {
       var m = makerById[p.maker], c = catById[p.cat];
@@ -515,9 +517,9 @@
   function highlight(text, q) {
     var t = esc(text);
     var w = norm(q).trim(); if (!w) return t;
-    var i = norm(text).indexOf(w.split(/\s+/)[0]);
-    if (i < 0) return t;
-    var first = w.split(/\s+/)[0];
+    var first = stem(w.split(/\s+/)[0]);
+    var i = norm(text).indexOf(first);
+    if (i < 0 || !first) return t;
     return esc(text.slice(0, i)) + '<mark>' + esc(text.slice(i, i + first.length)) + '</mark>' + esc(text.slice(i + first.length));
   }
   function hitHTML(p, q) {

@@ -53,7 +53,8 @@
       '<div class="look__media reveal">' +
         '<img src="' + L.image + '-md.webp" srcset="' + L.image + '-md.webp 1000w, ' + L.image + '.webp 2000w" sizes="(min-width: 1024px) 64vw, 100vw" alt="' + esc(L.alt) + '" width="2000" height="1333" loading="lazy" decoding="async">' +
         items.map(function (it, i) {
-          return '<button class="hotspot" type="button" style="left:' + it.x + '%;top:' + it.y + '%" data-look-spot="' + i + '" aria-label="' + (i + 1) + '. ' + esc(it.p.title) + ', ' + fmt(it.p.price) + '">' +
+          var side = it.x > 66 ? ' hotspot--right' : it.x < 34 ? ' hotspot--left' : '';
+          return '<button class="hotspot' + side + '" type="button" style="left:' + it.x + '%;top:' + it.y + '%" data-look-spot="' + i + '" aria-label="' + (i + 1) + '. ' + esc(it.p.title) + ', ' + fmt(it.p.price) + '">' +
             '<span class="hotspot__pop"><strong>' + esc(it.p.title) + '</strong><span>' + fmt(it.p.price) + '</span></span></button>';
         }).join('') +
       '</div>' +

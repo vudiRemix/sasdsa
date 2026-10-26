@@ -183,19 +183,27 @@
   function bind() {
     var form = $('[data-form]');
     var phone = $('#f-phone');
-    phone.addEventListener('input', function () { phone.value = formatPhone(phoneDigits(phone.value)); });
-    phone.addEventListener('focus', function () { if (!phone.value) phone.value = '+7 ('; });
-    phone.addEventListener('blur', function () { if (phoneDigits(phone.value).length === 0) phone.value = ''; });
+    // Маска +7 (___) ___-__-__. Если стёрли только скобку или дефис — стираем и цифру перед ним
+    var prevDigits = phoneDigits(phone.value);
+    phone.addEventListener('input', function (e) {
+      var d = phoneDigits(phone.value);
+      if (e.inputType && e.inputType.indexOf('delete') === 0 && d === prevDigits) d = d.slice(0, -1);
+      phone.value = formatPhone(d);
+      prevDigits = d;
+    });
 
     form.addEventListener('change', function (e) {
       var t = e.target;
       if (t.name === 'ship') { st.ship = t.value; toggleAddress(); renderSummary(); persist(); }
       if (t.name === 'pay') { st.pay = t.value; renderSummary(); persist(); }
-      if (t.name === 'consent') check('consent');
+      if (t.name === 'consent') { check('consent'); if (!$('.field.is-invalid', form)) $('[data-form-error]').style.display = 'none'; }
     });
     // Проверяем поле, когда пользователь из него ушёл, и снимаем ошибку, как только поправил
     form.addEventListener('focusout', function (e) { var n = e.target.name; if (rules[n] && e.target.value) check(n); persist(); });
-    form.addEventListener('input', function (e) { var w = e.target.closest('.field.is-invalid'); if (w) check(e.target.name); });
+    form.addEventListener('input', function (e) {
+      var w = e.target.closest('.field.is-invalid'); if (w) check(e.target.name);
+      if (!$('.field.is-invalid', form)) $('[data-form-error]').style.display = 'none';
+    });
 
     $('[data-promo-apply]').addEventListener('click', function () { applyPromo(false); });
     $('[data-promo]').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); applyPromo(false); } });
