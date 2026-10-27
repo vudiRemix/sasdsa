@@ -175,6 +175,7 @@ orderEndpoint: 'https://formspree.io/f/ваш_id',
 - **GitHub Pages:** Settings → Pages → Branch: `main`, папка `/` → через минуту сайт будет на `имя.github.io/репозиторий`.
 - **Netlify / Vercel:** перетащить папку в окно браузера (Netlify Drop).
 - **Beget, Timeweb, REG.RU:** залить файлы в `public_html` через файловый менеджер или FTP.
+- **Свой сервер, VPS или хостинг с панелью (Pterodactyl и похожие):** в комплекте два готовых мини-сервера без зависимостей — `server.js` (Node.js) и `server.py` (Python). Загрузите все файлы, укажите команду запуска `node server.js` или `python3 server.py` и запустите. Порт берётся из переменной `PORT` или `SERVER_PORT`, иначе 25990. Служебные файлы (`server.*`, `README`, `tools/`, `docs/`) наружу не отдаются.
 
 ---
 
