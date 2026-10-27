@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chaqqon Cargo — карго из Китая в Таджикистан</title>
+  <meta name="description" content="Доставка посылок из Китая в Душанбе и Худжанд: склад в Гуанчжоу, авто 12–18 дней, авиа 5–8 дней. Калькулятор стоимости и отслеживание в Telegram-боте.">
+  <meta name="theme-color" content="#FFDE3B">
+  <meta property="og:title" content="Chaqqon Cargo — карго из Китая в Таджикистан">
+  <meta property="og:description" content="Склад в Гуанчжоу, авто 12–18 дней, авиа 5–8 дней. Отслеживание в Telegram-боте.">
+  <meta property="og:image" content="assets/img/logo.webp">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className = 'js';</script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Перейти к содержимому</a>
+
+  <div class="topbar">
+    <div class="container topbar__in">
+      <p class="topbar__news" data-i18n="topbar">Отправки из Гуанчжоу каждую неделю</p>
+      <div class="topbar__info"><span data-hours></span><a data-phone href="#"></a></div>
+      <div class="lang" role="group" aria-label="Язык / Забон">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="tj" aria-pressed="false">TJ</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container header__in">
+      <a class="logo" href="#top" aria-label="Chaqqon Cargo"><img src="assets/img/logo.webp" alt="Chaqqon Cargo" width="390" height="243"></a>
+      <nav class="nav" aria-label="Меню">
+        <a href="#calc" data-i18n="nav.calc">Калькулятор</a>
+        <a href="#tariffs" data-i18n="nav.tariffs">Тарифы</a>
+        <a href="#how" data-i18n="nav.how">Как заказать</a>
+        <a href="#address" data-i18n="nav.address">Адрес склада</a>
+        <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+      </nav>
+      <div class="header__cta">
+        <a class="btn" data-bot href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 4-18 7 6.5 2.5L12 20l3.2-5.2L21 4Z"/><path d="m9.5 13.5 5.7-4.2"/></svg>
+          <span data-i18n="cta.bot">Открыть бот</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Первый экран -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__text">
+            <p class="chip"><img src="assets/img/truck.webp" alt="" width="181" height="99"><span data-i18n="hero.chip">Склад в Гуанчжоу · выдача в Душанбе и Худжанде</span></p>
+            <h1 class="h1 hero__title" id="hero-title" data-i18n="hero.title"><span>Карго из Китая в</span><span><mark>Таджикистан</mark></span></h1>
+            <p class="lead" data-i18n="hero.lead">Принимаем посылки с Taobao, Pinduoduo, 1688 и Poizon на складе в Гуанчжоу, взвешиваем, фотографируем и везём до Душанбе и Худжанда. Каждую посылку видно в Telegram-боте.</p>
+            <form class="track" data-track>
+              <label class="track__label" for="track-input" data-i18n="track.label">Где моя посылка?</label>
+              <div class="track__row">
+                <input id="track-input" name="track" autocomplete="off" spellcheck="false" data-i18n-ph="track.ph" placeholder="Трек-номер, например YT1234567890">
+                <button class="btn" type="submit"><span data-i18n="track.btn">Проверить в боте</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+              </div>
+            </form>
+            <div class="hero__links">
+              <a class="link-arrow" href="#calc"><span data-i18n="hero.calc">Рассчитать стоимость</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a>
+              <a class="link-arrow" href="#address"><span data-i18n="hero.addr">Адрес склада в Китае</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a>
+            </div>
+          </div>
+
+          <div class="route rv" aria-labelledby="route-title">
+            <div class="route__head"><b id="route-title" data-i18n="route.title">Путь посылки</b><span data-route-total></span></div>
+            <div class="route__body">
+            <span class="route__line" aria-hidden="true"><span class="route__truck"><img src="assets/img/truck.webp" alt="" width="181" height="99"></span></span>
+            <ol class="route__list">
+              <li class="route__stop"><span class="route__day" data-i18n="route.d1">День 1</span><span class="route__name" data-i18n="route.s1">Склад в Гуанчжоу</span><span class="route__note" data-i18n="route.n1">Принимаем, взвешиваем, фотографируем</span></li>
+              <li class="route__stop"><span class="route__day" data-i18n="route.d2">День 3–5</span><span class="route__name" data-i18n="route.s2">Урумчи</span><span class="route__note" data-i18n="route.n2">Собираем партию и грузим в машину</span></li>
+              <li class="route__stop"><span class="route__day" data-i18n="route.d3">День 8–12</span><span class="route__name" data-i18n="route.s3">КПП Кульма</span><span class="route__note" data-i18n="route.n3">Таможенное оформление</span></li>
+              <li class="route__stop"><span class="route__day" data-i18n="route.d4">День 12–18</span><span class="route__name" data-i18n="route.s4">Душанбе · Худжанд</span><span class="route__note" data-i18n="route.n4">Выдаём посылку, бот присылает уведомление</span></li>
+            </ol>
+            </div>
+          </div>
+        </div>
+
+        <dl class="facts">
+          <div><dt data-fact="auto"></dt><dd data-i18n="facts.auto">дней на машине</dd></div>
+          <div><dt data-fact="avia"></dt><dd data-i18n="facts.avia">дней самолётом</dd></div>
+          <div><dt data-fact="rate"></dt><dd data-i18n="facts.rate">за килограмм, от</dd></div>
+          <div><dt data-fact="points"></dt><dd data-i18n="facts.points">пункта выдачи</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Калькулятор -->
+    <section class="section" id="calc" aria-labelledby="calc-title">
+      <div class="container">
+        <div class="head">
+          <p class="label" data-i18n="calc.label">Калькулятор</p>
+          <h2 class="h2" id="calc-title" data-i18n="calc.title">Сколько будет стоить доставка</h2>
+          <p class="lead" data-i18n="calc.lead">Укажите способ, что везёте и вес — покажем примерную цену в долларах и сомони.</p>
+        </div>
+        <div class="calc">
+          <form class="panel rv" data-calc onsubmit="return false">
+            <div class="field">
+              <p class="field__label" id="m-label" data-i18n="calc.method">Способ доставки</p>
+              <div class="seg" role="radiogroup" aria-labelledby="m-label" data-methods></div>
+            </div>
+            <div class="field">
+              <p class="field__label" id="c-label" data-i18n="calc.cat">Что везёте</p>
+              <div class="tiles" role="radiogroup" aria-labelledby="c-label" data-cats></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="weight" data-i18n="calc.weight">Вес, кг</label>
+              <div class="num">
+                <button type="button" data-step="-1" aria-label="−1 кг">−</button>
+                <input id="weight" inputmode="decimal" value="5" data-weight>
+                <button type="button" data-step="1" aria-label="+1 кг">+</button>
+              </div>
+            </div>
+            <label class="check"><input type="checkbox" data-dims-toggle><span data-i18n="calc.dims">Знаю размеры коробки</span></label>
+            <div class="field" data-dims hidden>
+              <p class="field__label small muted" data-i18n="calc.dimsHint">Длина × ширина × высота, см. Если коробка большая и лёгкая, считаем по объёму.</p>
+              <div class="dims">
+                <input class="input" inputmode="numeric" data-dim aria-label="Длина, см" placeholder="Д">
+                <input class="input" inputmode="numeric" data-dim aria-label="Ширина, см" placeholder="Ш">
+                <input class="input" inputmode="numeric" data-dim aria-label="Высота, см" placeholder="В">
+              </div>
+            </div>
+            <label class="check"><input type="checkbox" data-ins-toggle><span data-i18n="calc.ins">Застраховать посылку</span></label>
+            <div class="field" data-ins hidden>
+              <label class="field__label" for="value" data-i18n="calc.value">Стоимость товара, $</label>
+              <input class="input" id="value" inputmode="decimal" placeholder="100" data-value style="max-width:280px">
+            </div>
+          </form>
+
+          <aside class="result rv" style="--i:1" aria-live="polite" data-result></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Тарифы -->
+    <section class="section" id="tariffs" aria-labelledby="tariffs-title" style="padding-top:0">
+      <div class="container">
+        <div class="head">
+          <p class="label" data-i18n="tariffs.label">Тарифы</p>
+          <h2 class="h2" id="tariffs-title" data-i18n="tariffs.title">Цена за килограмм</h2>
+        </div>
+        <div class="table-wrap rv">
+          <table class="table">
+            <thead><tr><th scope="col" data-i18n="tariffs.cat">Что везём</th><th scope="col" data-th-method="auto"></th><th scope="col" data-th-method="avia"></th></tr></thead>
+            <tbody data-tariffs></tbody>
+          </table>
+        </div>
+        <ul class="notes" data-notes></ul>
+      </div>
+    </section>
+
+    <!-- Как заказать -->
+    <section class="section section--white" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="head">
+          <p class="label" data-i18n="how.label">Как заказать</p>
+          <h2 class="h2" id="how-title" data-i18n="how.title">Четыре шага до посылки</h2>
+        </div>
+        <ol class="steps">
+          <li class="step rv">
+            <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 4-18 7 6.5 2.5L12 20l3.2-5.2L21 4Z"/><path d="m9.5 13.5 5.7-4.2"/></svg></span>
+            <h3 class="h3" data-i18n="how.s1">Получите личный код</h3>
+            <p data-i18n="how.p1">Откройте бот, нажмите «Адрес в Китае» — там ваш код и адрес склада.</p>
+            <a data-bot href="#" target="_blank" rel="noopener" data-bot-name></a>
+          </li>
+          <li class="step rv" style="--i:1">
+            <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 8H6.2"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/></svg></span>
+            <h3 class="h3" data-i18n="how.s2">Закажите в магазине</h3>
+            <p data-i18n="how.p2">При оформлении укажите адрес нашего склада и код в имени получателя.</p>
+            <div class="shops"><span>Taobao</span><span>Pinduoduo</span><span>1688</span><span>Poizon</span></div>
+          </li>
+          <li class="step rv" style="--i:2">
+            <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5Z"/><path d="M4 8.5 12 13l8-4.5M12 13v7"/></svg></span>
+            <h3 class="h3" data-i18n="how.s3">Добавьте трек в бот</h3>
+            <p data-i18n="how.p3">Когда магазин отправит заказ, добавьте трек-номер. Мы примем посылку, взвесим и пришлём фото.</p>
+          </li>
+          <li class="step rv" style="--i:3">
+            <span class="step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
+            <h3 class="h3" data-i18n="how.s4">Заберите в своём городе</h3>
+            <p data-i18n="how.p4">Бот напишет, когда посылка приедет в Душанбе или Худжанд.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Адрес склада -->
+    <section class="section section--yellow" id="address" aria-labelledby="addr-title">
+      <div class="container addr">
+        <div class="addr__text rv">
+          <p class="label" data-i18n="addr.label">Адрес склада</p>
+          <h2 class="h2" id="addr-title" data-i18n="addr.title">Куда отправлять заказы в Китае</h2>
+          <p class="lead" data-i18n="addr.lead">Введите свой код — адрес подставится сам. Копируйте поля по одному в форму магазина.</p>
+          <label class="code-input" for="client-code"><span data-code-prefix></span><input id="client-code" placeholder="0000" autocomplete="off" maxlength="12" data-code aria-label="Ваш код"></label>
+          <p class="warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg><span data-i18n="addr.warn">Без кода посылку не найти. Код обязательно должен быть в имени получателя и в адресе.</span></p>
+        </div>
+        <div class="addr__card rv" style="--i:1">
+          <dl data-addr style="display:grid;gap:8px"></dl>
+          <button class="btn" type="button" data-copy-all>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+            <span data-i18n="addr.copyAll">Скопировать весь адрес</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Бот -->
+    <section class="section section--dark" aria-labelledby="bot-title">
+      <div class="container bot">
+        <div class="bot__text rv">
+          <p class="label" data-i18n="bot.label">Telegram-бот</p>
+          <h2 class="h2" id="bot-title" data-i18n="bot.title">Все посылки — в одном боте</h2>
+          <p class="lead" data-i18n="bot.lead">Не нужно писать менеджеру и ждать ответа: статус, вес и фото каждой посылки видно в боте.</p>
+          <ul class="bot__features">
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5Z"/><path d="M4 8.5 12 13l8-4.5M12 13v7"/></svg></span><div><b data-i18n="bot.f1">Мои посылки</b><small data-i18n="bot.f1d">Все заказы и их статусы</small></div></li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><div><b data-i18n="bot.f2">Добавить трек</b><small data-i18n="bot.f2d">Привяжите посылку к себе</small></div></li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span><div><b data-i18n="bot.f3">Проверить трек</b><small data-i18n="bot.f3d">Где посылка прямо сейчас</small></div></li>
+            <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l5 3V10l5 3V6l4 2v13"/></svg></span><div><b data-i18n="bot.f4">Адрес в Китае</b><small data-i18n="bot.f4d">Ваш код и адрес склада</small></div></li>
+          </ul>
+          <a class="btn btn--yellow" data-bot href="#" target="_blank" rel="noopener"><span data-bot-name></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="phone rv" style="--i:1"><img src="assets/img/bot-screen.webp" alt="Главный экран бота Chaqqon Cargo: мои посылки, добавить трек, проверить трек, адрес в Китае" width="384" height="641" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- Можно / нельзя -->
+    <section class="section" aria-labelledby="rules-title">
+      <div class="container">
+        <div class="head">
+          <p class="label" data-i18n="rules.label">Правила</p>
+          <h2 class="h2" id="rules-title" data-i18n="rules.title">Что можно и что нельзя везти</h2>
+        </div>
+        <div class="rules">
+          <div class="rule rule--yes rv">
+            <h3 class="h3" data-i18n="rules.yes">Возим</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg><span data-i18n="rules.y1">Одежду, обувь, сумки и текстиль</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg><span data-i18n="rules.y2">Товары для дома, кухни и детей</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg><span data-i18n="rules.y3">Телефоны, гаджеты и аксессуары</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg><span data-i18n="rules.y4">Товары для бизнеса оптом — по отдельной цене</span></li>
+            </ul>
+          </div>
+          <div class="rule rule--no rv" style="--i:1">
+            <h3 class="h3" data-i18n="rules.no">Не возим</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span data-i18n="rules.n1">Оружие и его части, в том числе пневматику</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span data-i18n="rules.n2">Легковоспламеняющиеся жидкости и газовые баллоны</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span data-i18n="rules.n3">Лекарства и вещества без документов</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span data-i18n="rules.n4">Отдельные аккумуляторы и пауэрбанки — только авто, уточняйте</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Пункты выдачи -->
+    <section class="section" aria-labelledby="points-title" style="padding-top:0">
+      <div class="container">
+        <div class="head">
+          <p class="label" data-i18n="points.label">Пункты выдачи</p>
+          <h2 class="h2" id="points-title" data-i18n="points.title">Где забрать посылку</h2>
+        </div>
+        <div class="points" data-points></div>
+      </div>
+    </section>
+
+    <!-- Вопросы -->
+    <section class="section section--white" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="head">
+          <p class="label" data-i18n="faq.label">Вопросы</p>
+          <h2 class="h2" id="faq-title" data-i18n="faq.title">Частые вопросы</h2>
+        </div>
+        <div class="faq">
+          <details><summary><span data-i18n="faq.q1">Сколько идёт посылка?</span><i aria-hidden="true"></i></summary><p data-i18n="faq.a1">На машине — 12–18 дней от склада в Гуанчжоу до Душанбе, самолётом — 5–8 дней. Срок считается с момента, когда посылка пришла на наш склад, а не с момента заказа в магазине.</p></details>
+          <details><summary><span data-i18n="faq.q2">Как считается вес?</span><i aria-hidden="true"></i></summary><p data-i18n="faq.a2">Берём большее из двух: фактический вес или объёмный (длина × ширина × высота в сантиметрах, делённые на 6000). Минимум к оплате — 1 кг. Точный вес пришлёт бот после взвешивания на складе.</p></details>
+          <details><summary><span data-i18n="faq.q3">Что если посылка потеряется или разобьётся?</span><i aria-hidden="true"></i></summary><p data-i18n="faq.a3">Застрахованную посылку возмещаем по заявленной стоимости. Страховка — 3% от стоимости товара, её можно включить при расчёте. Хрупкие вещи дополнительно упаковываем на складе.</p></details>
+          <details><summary><span data-i18n="faq.q4">Где взять личный код?</span><i aria-hidden="true"></i></summary><p data-i18n="faq.a4">В Telegram-боте, в разделе «Адрес в Китае». Код нужен, чтобы на складе поняли, чья посылка. Без кода посылка может потеряться среди тысяч других.</p></details>
+          <details><summary><span data-i18n="faq.q5">Можно ли объединить несколько заказов?</span><i aria-hidden="true"></i></summary><p data-i18n="faq.a5">Да. Посылки с одним кодом, пришедшие на склад, собираем вместе и отправляем одной партией — так выходит дешевле, чем по отдельности.</p></details>
+          <details><summary><span data-i18n="faq.q6">Работаете с оптом и бизнесом?</span><i aria-hidden="true"></i></summary><p data-i18n="faq.a6">Да, от 100 кг цена считается индивидуально. Напишите менеджеру, что и в каком объёме везёте, — посчитаем и предложим лучший вариант доставки.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Призыв -->
+    <section class="section" aria-labelledby="final-title">
+      <div class="container">
+        <div class="final rv">
+          <img class="final__truck" src="assets/img/truck.webp" alt="" width="181" height="99">
+          <h2 class="h2" id="final-title" data-i18n="final.title">Отправьте первую посылку уже на этой неделе</h2>
+          <p class="lead" data-i18n="final.lead">Откройте бот, получите код и адрес склада — это займёт минуту.</p>
+          <div class="final__btns">
+            <a class="btn" data-bot href="#" target="_blank" rel="noopener"><span data-i18n="cta.bot">Открыть бот</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn btn--ghost" data-wa href="#" target="_blank" rel="noopener"><span data-i18n="cta.wa">Написать в WhatsApp</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div style="display:grid;gap:16px;align-content:start">
+          <a class="footer__logo" href="#top"><img src="assets/img/logo-light.webp" alt="Chaqqon Cargo" width="390" height="243" loading="lazy"></a>
+          <p data-i18n="footer.about">Карго из Китая в Таджикистан: склад в Гуанчжоу, доставка на машине и самолётом, выдача в Душанбе и Худжанде.</p>
+        </div>
+        <div><h3 data-i18n="footer.menu">Разделы</h3><ul>
+          <li><a href="#calc" data-i18n="nav.calc">Калькулятор</a></li>
+          <li><a href="#tariffs" data-i18n="nav.tariffs">Тарифы</a></li>
+          <li><a href="#how" data-i18n="nav.how">Как заказать</a></li>
+          <li><a href="#address" data-i18n="nav.address">Адрес склада</a></li>
+        </ul></div>
+        <div><h3 data-i18n="footer.contacts">Связаться</h3><ul>
+          <li><a data-phone href="#"></a></li>
+          <li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a data-tg href="#" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a data-ig href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul></div>
+        <div><h3 data-i18n="footer.hours">Режим работы</h3><ul><li data-hours></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© <span data-year></span> Chaqqon Cargo</span><span data-i18n="footer.note">Цены и сроки на сайте — ориентировочные, точную стоимость пришлёт бот после взвешивания.</span></div>
+    </div>
+  </footer>
+
+  <div class="dock" data-dock>
+    <a class="btn btn--yellow" data-bot href="#" target="_blank" rel="noopener"><span data-i18n="cta.botShort">Бот</span></a>
+    <a class="btn btn--ghost-light" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

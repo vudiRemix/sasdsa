@@ -1,0 +1,34 @@
+/* Фирменные цвета и размеры. Жёлтый снят с логотипа компании. */
+:root {
+  --y: #FFDE3B;
+  --y-deep: #FFD000;
+  --y-soft: #FFF4BF;
+  --ink: #141414;
+  --ink-2: #3A362A;
+  --ink-3: #5C574A;
+  --paper: #F7F5EF;
+  --white: #FFFFFF;
+  --line: rgb(20 20 20 / 0.1);
+  --line-strong: rgb(20 20 20 / 0.22);
+  --dark: #141414;
+  --on-dark: #F7F5EF;
+  --on-dark-2: #A8A49A;
+  --dark-line: rgb(247 245 239 / 0.14);
+  --ok: #1E7A46;
+  --err: #B3261E;
+
+  --font-display: 'Geologica', 'Onest', system-ui, sans-serif;
+  --font-body: 'Onest', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --container: 1280px;
+  --gutter: clamp(16px, 3.5vw, 40px);
+  --section: clamp(64px, 3rem + 5vw, 128px);
+  --r-sm: 12px;
+  --r: 20px;
+  --r-lg: 32px;
+  --pill: 999px;
+  --control: 54px;
+
+  --shadow: 0 1px 2px rgb(20 20 20 / .06), 0 12px 32px -12px rgb(20 20 20 / .18);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
